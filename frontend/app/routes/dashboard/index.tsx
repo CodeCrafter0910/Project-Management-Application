@@ -40,6 +40,19 @@ const Dashboard = () => {
     );
   }
 
+  if (!data) {
+    return (
+      <div className="flex items-center justify-center h-[50vh]">
+        <div className="text-center">
+          <h2 className="text-xl font-semibold mb-2">No workspace selected</h2>
+          <p className="text-muted-foreground">
+            Please select a workspace to view the dashboard.
+          </p>
+        </div>
+      </div>
+    );
+  }
+
   return (
     <div className="space-y-8 2xl:space-y-12">
       <div className="flex items-center justify-between">

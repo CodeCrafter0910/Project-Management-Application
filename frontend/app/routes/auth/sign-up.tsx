@@ -43,14 +43,20 @@ const SignUp = () => {
 
   const handleOnSubmit = (values: SignupFormData) => {
     mutate(values, {
-      onSuccess: () => {
-        toast.success("Email Verification Required", {
-          description:
-            "Please check your email for a verification link. If you don't see it, please check your spam folder.",
+      onSuccess: (data: any) => {
+        // Auto-login: Store token and user data
+        localStorage.setItem("token", data.token);
+        localStorage.setItem("user", JSON.stringify(data.user));
+
+        toast.success("Account created successfully", {
+          description: "Welcome to TaskHub!",
         });
 
         form.reset();
-        navigate("/sign-in");
+        // Redirect to dashboard
+        navigate("/dashboard");
+        // Force reload to ensure auth state is picked up if needed, though navigate usually works
+        // window.location.reload(); 
       },
       onError: (error: any) => {
         const errorMessage =

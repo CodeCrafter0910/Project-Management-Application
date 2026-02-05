@@ -36,37 +36,23 @@ const registerUser = async (req, res) => {
       isEmailVerified: true, // Auto-verify for development
     });
 
-    const verificationToken = jwt.sign(
-      { userId: newUser._id, purpose: "email-verification" },
+    // Generate token for auto-login
+    const token = jwt.sign(
+      { userId: newUser._id, purpose: "login" },
       process.env.JWT_SECRET,
-      { expiresIn: "1h" }
+      { expiresIn: "7d" }
     );
 
-    await Verification.create({
-      userId: newUser._id,
-      token: verificationToken,
-      expiresAt: new Date(Date.now() + 1 * 60 * 60 * 1000),
-    });
+    newUser.lastLogin = new Date();
+    await newUser.save();
 
-    // send email
-    const verificationLink = `${process.env.FRONTEND_URL}/verify-email?token=${verificationToken}`;
-    const emailBody = `<p>Click <a href="${verificationLink}">here</a> to verify your email</p>`;
-    const emailSubject = "Verify your email";
-
-    const isEmailSent = await sendEmail(email, emailSubject, emailBody);
-
-    if (!isEmailSent) {
-      console.warn("Email sending failed, but allowing registration to proceed for development");
-      // In development, allow registration even if email fails
-      return res.status(201).json({
-        message:
-          "Account created successfully. Email verification is currently unavailable. You can still log in.",
-      });
-    }
+    const userData = newUser.toObject();
+    delete userData.password;
 
     res.status(201).json({
-      message:
-        "Verification email sent to your email. Please check and verify your account.",
+      message: "Account created successfully",
+      token,
+      user: userData,
     });
   } catch (error) {
     console.log(error);

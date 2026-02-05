@@ -23,11 +23,13 @@ import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
 import { Link, useNavigate } from "react-router";
 import { useSignUpMutation } from "@/hooks/use-auth";
+import { useAuth } from "@/provider/auth-context";
 import { toast } from "sonner";
 
 export type SignupFormData = z.infer<typeof signUpSchema>;
 
 const SignUp = () => {
+  const { login } = useAuth();
   const navigate = useNavigate();
   const form = useForm<SignupFormData>({
     resolver: zodResolver(signUpSchema),
@@ -44,9 +46,8 @@ const SignUp = () => {
   const handleOnSubmit = (values: SignupFormData) => {
     mutate(values, {
       onSuccess: (data: any) => {
-        // Auto-login: Store token and user data
-        localStorage.setItem("token", data.token);
-        localStorage.setItem("user", JSON.stringify(data.user));
+        // Auto-login using AuthProvider
+        login(data);
 
         toast.success("Account created successfully", {
           description: "Welcome to TaskHub!",

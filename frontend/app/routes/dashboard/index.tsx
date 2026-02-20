@@ -19,7 +19,9 @@ const Dashboard = () => {
   const [searchParams] = useSearchParams();
   const workspaceId = searchParams.get("workspaceId");
 
-  const { data, isPending } = useGetWorkspaceStatsQuery(workspaceId!) as {
+  const { data, isPending, isError } = useGetWorkspaceStatsQuery(
+    workspaceId!
+  ) as {
     data: {
       stats: StatsCardProps;
       taskTrendsData: TaskTrendsData[];
@@ -30,28 +32,36 @@ const Dashboard = () => {
       recentProjects: Project[];
     };
     isPending: boolean;
+    isError: boolean;
   };
 
-  // Still redirecting to auto-select workspace — show loader
+  // No workspace selected yet — show prompt
   if (!workspaceId) {
-    return <Loader />;
-  }
-
-  if (isPending) {
-    return (
-      <div>
-        <Loader />
-      </div>
-    );
-  }
-
-  if (!data) {
     return (
       <div className="flex items-center justify-center h-[50vh]">
         <div className="text-center">
           <h2 className="text-xl font-semibold mb-2">No workspace selected</h2>
           <p className="text-muted-foreground">
-            Please select a workspace to view the dashboard.
+            Select a workspace from the dropdown above to view the dashboard.
+          </p>
+        </div>
+      </div>
+    );
+  }
+
+  if (isPending) {
+    return <Loader />;
+  }
+
+  if (isError || !data) {
+    return (
+      <div className="flex items-center justify-center h-[50vh]">
+        <div className="text-center">
+          <h2 className="text-xl font-semibold mb-2">
+            Failed to load dashboard
+          </h2>
+          <p className="text-muted-foreground">
+            Could not connect to the server. Please try refreshing the page.
           </p>
         </div>
       </div>

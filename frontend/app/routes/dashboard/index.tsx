@@ -32,6 +32,11 @@ const Dashboard = () => {
     isPending: boolean;
   };
 
+  // Still redirecting to auto-select workspace — show loader
+  if (!workspaceId) {
+    return <Loader />;
+  }
+
   if (isPending) {
     return (
       <div>

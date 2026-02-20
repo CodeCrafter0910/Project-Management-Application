@@ -3,17 +3,18 @@ import { SidebarComponent } from "@/components/layout/sidebar-component";
 import { Loader } from "@/components/loader";
 import { CreateWorkspace } from "@/components/workspace/create-workspace";
 import { fetchData } from "@/lib/fetch-util";
+import { useGetWorkspacesQuery } from "@/hooks/use-workspace";
 import { useAuth } from "@/provider/auth-context";
 import type { Workspace } from "@/types";
 import { useEffect, useState } from "react";
-import { Navigate, Outlet, useLoaderData, useNavigate, useSearchParams } from "react-router";
+import { Navigate, Outlet, useNavigate, useSearchParams } from "react-router";
 
 export const clientLoader = async () => {
   try {
-    const [workspaces] = await Promise.all([fetchData("/workspaces")]);
+    const workspaces = await fetchData("/workspaces");
     return { workspaces };
   } catch (error) {
-    console.log(error);
+    // Return empty — React Query inside the component will retry
     return { workspaces: [] };
   }
 };
@@ -21,27 +22,29 @@ export const clientLoader = async () => {
 const DashboardLayout = () => {
   const { isAuthenticated, isLoading } = useAuth();
   const [isCreatingWorkspace, setIsCreatingWorkspace] = useState(false);
-  const [currentWorkspace, setCurrentWorkspace] = useState<Workspace | null>(
-    null
-  );
+  const [currentWorkspace, setCurrentWorkspace] = useState<Workspace | null>(null);
 
-  const { workspaces } = useLoaderData() as { workspaces: Workspace[] };
   const [searchParams] = useSearchParams();
   const navigate = useNavigate();
 
-  // Auto-select the first workspace if none is in the URL
+  // Use React Query so workspaces are retried automatically after cold-start
+  const { data: workspaces = [] } = useGetWorkspacesQuery() as {
+    data: Workspace[];
+  };
+
+  // Auto-select first workspace once workspaces are loaded
   useEffect(() => {
     if (!workspaces || workspaces.length === 0) return;
 
     const workspaceId = searchParams.get("workspaceId");
 
     if (!workspaceId) {
-      // No workspace selected — auto-pick the first one
+      // No workspace in URL — navigate to the first one
       const first = workspaces[0];
       setCurrentWorkspace(first);
       navigate(`/dashboard?workspaceId=${first._id}`, { replace: true });
     } else if (!currentWorkspace) {
-      // workspaceId is in URL but state is empty (e.g. after refresh) — restore it
+      // workspaceId is in URL (e.g. after page refresh) — restore state
       const found = workspaces.find((ws) => ws._id === workspaceId);
       if (found) setCurrentWorkspace(found);
     }
@@ -68,6 +71,7 @@ const DashboardLayout = () => {
           onWorkspaceSelected={handleWorkspaceSelected}
           selectedWorkspace={currentWorkspace}
           onCreateWorkspace={() => setIsCreatingWorkspace(true)}
+          workspaces={workspaces}
         />
 
         <main className="flex-1 overflow-y-auto h-full w-full">

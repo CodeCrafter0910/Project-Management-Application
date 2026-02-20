@@ -13,11 +13,8 @@ const WorkspaceDetails = () => {
   const [isCreateProject, setIsCreateProject] = useState(false);
   const [isInviteMember, setIsInviteMember] = useState(false);
 
-  if (!workspaceId) {
-    return <div>No workspace found</div>;
-  }
-
-  const { data, isLoading } = useGetWorkspaceQuery(workspaceId) as {
+  // Hook must be called unconditionally (Rules of Hooks)
+  const { data, isLoading } = useGetWorkspaceQuery(workspaceId!) as {
     data: {
       workspace: Workspace;
       projects: Project[];
@@ -25,12 +22,20 @@ const WorkspaceDetails = () => {
     isLoading: boolean;
   };
 
+  if (!workspaceId) {
+    return <div>No workspace found</div>;
+  }
+
   if (isLoading) {
     return (
       <div>
         <Loader />
       </div>
     );
+  }
+
+  if (!data) {
+    return null;
   }
 
   return (

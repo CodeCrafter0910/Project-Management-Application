@@ -51,7 +51,11 @@ const DashboardLayout = () => {
   }, [workspaces, searchParams]);
 
   if (isLoading) {
-    return <Loader />;
+    return (
+      <div className="min-h-screen flex items-center justify-center bg-background">
+        <Loader />
+      </div>
+    );
   }
 
   if (!isAuthenticated) {
@@ -63,10 +67,10 @@ const DashboardLayout = () => {
   };
 
   return (
-    <div className="flex h-screen w-full">
+    <div className="flex h-screen w-full bg-background overflow-hidden">
       <SidebarComponent currentWorkspace={currentWorkspace} />
 
-      <div className="flex flex-1 flex-col h-full">
+      <div className="flex flex-1 flex-col h-full overflow-hidden relative">
         <Header
           onWorkspaceSelected={handleWorkspaceSelected}
           selectedWorkspace={currentWorkspace}
@@ -74,8 +78,11 @@ const DashboardLayout = () => {
           workspaces={workspaces}
         />
 
-        <main className="flex-1 overflow-y-auto h-full w-full">
-          <div className="mx-auto container px-2 sm:px-6 lg:px-8 py-0 md:py-8 w-full h-full">
+        <main className="flex-1 overflow-y-auto h-full w-full bg-background/50 relative z-0">
+          {/* Subtle gradient background for the main content area */}
+          <div className="absolute inset-0 pointer-events-none -z-10 bg-[radial-gradient(ellipse_at_top_right,_var(--tw-gradient-stops))] from-indigo-500/5 via-background to-background" />
+          
+          <div className="mx-auto container px-4 sm:px-6 lg:px-8 py-6 md:py-8 w-full h-full animate-fade-in-up">
             <Outlet />
           </div>
         </main>

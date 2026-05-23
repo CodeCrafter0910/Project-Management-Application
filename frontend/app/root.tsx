@@ -30,10 +30,16 @@ export function Layout({ children }: { children: React.ReactNode }) {
       <head>
         <meta charSet="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <title>TaskHub — Project Management Made Beautiful</title>
+        <meta
+          name="description"
+          content="TaskHub is a modern project management platform for teams. Manage tasks, collaborate seamlessly, and track progress with beautiful analytics."
+        />
+        <meta name="theme-color" content="#4f46e5" />
         <Meta />
         <Links />
       </head>
-      <body>
+      <body className="antialiased">
         {children}
         <ScrollRestoration />
         <Scripts />
@@ -67,14 +73,19 @@ export function ErrorBoundary({ error }: Route.ErrorBoundaryProps) {
   }
 
   return (
-    <main className="pt-16 p-4 container mx-auto">
-      <h1>{message}</h1>
-      <p>{details}</p>
-      {stack && (
-        <pre className="w-full p-4 overflow-x-auto">
-          <code>{stack}</code>
-        </pre>
-      )}
+    <main className="min-h-screen flex items-center justify-center bg-gradient-hero p-4">
+      <div className="glass-light rounded-2xl p-8 max-w-lg w-full text-center space-y-4">
+        <div className="w-16 h-16 mx-auto rounded-full bg-gradient-primary flex items-center justify-center">
+          <span className="text-2xl text-white font-bold">{message === "404" ? "404" : "!"}</span>
+        </div>
+        <h1 className="text-3xl font-bold text-gradient">{message}</h1>
+        <p className="text-muted-foreground">{details}</p>
+        {stack && (
+          <pre className="w-full p-4 overflow-x-auto text-left text-xs bg-muted rounded-lg mt-4">
+            <code>{stack}</code>
+          </pre>
+        )}
+      </div>
     </main>
   );
 }

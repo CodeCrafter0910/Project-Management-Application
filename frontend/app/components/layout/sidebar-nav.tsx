@@ -25,7 +25,7 @@ export const SidebarNav = ({
   const navigate = useNavigate();
 
   return (
-    <nav className={cn("flex flex-col gap-y-2", className)} {...props}>
+    <nav className={cn("flex flex-col gap-y-1", className)} {...props}>
       {items.map((el) => {
         const Icon = el.icon;
         const isActive = location.pathname === el.href;
@@ -43,14 +43,20 @@ export const SidebarNav = ({
         return (
           <Button
             key={el.href}
-            variant={isActive ? "outline" : "ghost"}
+            variant={isActive ? "secondary" : "ghost"}
             className={cn(
-              "justify-start",
-              isActive && "bg-blue-800/20 text-blue-600 font-medium"
+              "justify-start transition-all duration-200 relative group h-10",
+              isActive &&
+                "bg-indigo-500/10 text-indigo-600 dark:text-indigo-400 font-medium shadow-sm hover:bg-indigo-500/15",
+              !isActive &&
+                "text-muted-foreground hover:text-foreground hover:bg-accent/60"
             )}
             onClick={handleClick}
           >
-            <Icon className="mr-2 size-4" />
+            {isActive && (
+              <div className="absolute left-0 top-1/2 -translate-y-1/2 w-1 h-5 rounded-r-full bg-gradient-to-b from-indigo-500 to-violet-500" />
+            )}
+            <Icon className={cn("mr-2 size-4 transition-colors", isActive ? "text-indigo-500" : "group-hover:text-foreground")} />
             {isCollapsed ? (
               <span className="sr-only">{el.title}</span>
             ) : (

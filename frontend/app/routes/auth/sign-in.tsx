@@ -112,7 +112,7 @@ const SignIn = () => {
             <div className="w-12 h-12 rounded-xl bg-gradient-primary flex items-center justify-center shadow-lg shadow-indigo-500/25">
               <Zap className="w-6 h-6 text-white" />
             </div>
-            <span className="ml-3 text-xl font-bold text-white">TaskHub</span>
+            <span className="ml-3 text-xl font-bold text-white">TaskSphere</span>
           </div>
 
           <Card className="glass-dark border-white/10 shadow-2xl">

@@ -14,11 +14,11 @@ import type { Route } from "../../+types/root";
 
 export function meta({}: Route.MetaArgs) {
   return [
-    { title: "TaskHub — Project Management Made Beautiful" },
+    { title: "TaskSphere — Project Management Made Beautiful" },
     {
       name: "description",
       content:
-        "TaskHub is a modern project management platform. Manage tasks, collaborate with your team, and track progress with beautiful analytics.",
+        "TaskSphere is a modern project management platform. Manage tasks, collaborate with your team, and track progress with beautiful analytics.",
     },
   ];
 }
@@ -39,7 +39,7 @@ const Homepage = () => {
           <div className="w-10 h-10 rounded-xl bg-gradient-primary flex items-center justify-center shadow-lg shadow-indigo-500/25">
             <Zap className="w-5 h-5 text-white" />
           </div>
-          <span className="text-xl font-bold tracking-tight">TaskHub</span>
+          <span className="text-xl font-bold tracking-tight">TaskSphere</span>
         </Link>
         <div className="flex items-center gap-3">
           <Link to="/sign-in">
@@ -75,7 +75,7 @@ const Homepage = () => {
           </h1>
 
           <p className="text-lg sm:text-xl text-white/60 max-w-2xl mx-auto mb-10 leading-relaxed">
-            TaskHub brings your team together with powerful task management,
+            TaskSphere brings your team together with powerful task management,
             real-time collaboration, and beautiful analytics — all in one
             seamless platform.
           </p>
@@ -175,7 +175,7 @@ const Homepage = () => {
         <div className="glass rounded-3xl p-10 sm:p-16">
           <div className="text-center mb-12">
             <h2 className="text-3xl sm:text-4xl font-bold mb-4">
-              Why Teams Choose TaskHub
+              Why Teams Choose TaskSphere
             </h2>
             <p className="text-white/50 max-w-lg mx-auto">
               Built for modern teams who demand speed, clarity, and beautiful tools.
@@ -227,7 +227,7 @@ const Homepage = () => {
           </span>
         </h2>
         <p className="text-white/50 text-lg mb-10 max-w-xl mx-auto">
-          Join thousands of teams already using TaskHub to ship faster and
+          Join thousands of teams already using TaskSphere to ship faster and
           collaborate better.
         </p>
         <Link to="/sign-up">
@@ -247,10 +247,10 @@ const Homepage = () => {
             <div className="w-8 h-8 rounded-lg bg-gradient-primary flex items-center justify-center">
               <Zap className="w-4 h-4 text-white" />
             </div>
-            <span className="font-semibold">TaskHub</span>
+            <span className="font-semibold">TaskSphere</span>
           </div>
           <p className="text-sm text-white/30">
-            © {new Date().getFullYear()} TaskHub. Built for productive teams.
+            © {new Date().getFullYear()} TaskSphere. Built for productive teams.
           </p>
         </div>
       </footer>

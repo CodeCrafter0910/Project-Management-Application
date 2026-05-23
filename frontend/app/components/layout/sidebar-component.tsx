@@ -77,7 +77,7 @@ export const SidebarComponent = ({
                 <Zap className="w-4 h-4 text-white" />
               </div>
               <span className="font-bold text-lg hidden md:block tracking-tight">
-                TaskHub
+                TaskSphere
               </span>
             </div>
           )}

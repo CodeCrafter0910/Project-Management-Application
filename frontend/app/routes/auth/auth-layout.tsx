@@ -17,7 +17,7 @@ const AuthLayout = () => {
             <div className="absolute inset-0 w-16 h-16 rounded-2xl bg-gradient-primary opacity-30 animate-ping" />
           </div>
           <div className="flex flex-col items-center gap-2">
-            <span className="text-white font-bold text-xl tracking-tight">TaskHub</span>
+            <span className="text-white font-bold text-xl tracking-tight">TaskSphere</span>
             <div className="flex gap-1.5 mt-1">
               <div className="w-1.5 h-1.5 rounded-full bg-indigo-400 animate-bounce" style={{ animationDelay: "0ms" }} />
               <div className="w-1.5 h-1.5 rounded-full bg-violet-400 animate-bounce" style={{ animationDelay: "150ms" }} />

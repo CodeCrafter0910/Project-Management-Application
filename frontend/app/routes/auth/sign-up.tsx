@@ -48,7 +48,7 @@ const SignUp = () => {
       onSuccess: (data: any) => {
         login(data);
         toast.success("Account created successfully", {
-          description: "Welcome to TaskHub!",
+          description: "Welcome to TaskSphere!",
         });
         form.reset();
         navigate("/dashboard");
@@ -78,7 +78,7 @@ const SignUp = () => {
 
           <div>
             <h1 className="text-4xl font-extrabold text-white mb-3 tracking-tight">
-              Join TaskHub
+              Join TaskSphere
             </h1>
             <p className="text-lg text-white/50 leading-relaxed">
               Create your account and start managing projects with your team today.
@@ -110,7 +110,7 @@ const SignUp = () => {
             <div className="w-12 h-12 rounded-xl bg-gradient-primary flex items-center justify-center shadow-lg shadow-indigo-500/25">
               <Zap className="w-6 h-6 text-white" />
             </div>
-            <span className="ml-3 text-xl font-bold text-white">TaskHub</span>
+            <span className="ml-3 text-xl font-bold text-white">TaskSphere</span>
           </div>
 
           <Card className="glass-dark border-white/10 shadow-2xl">

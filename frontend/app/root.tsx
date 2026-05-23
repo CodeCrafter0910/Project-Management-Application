@@ -26,14 +26,14 @@ export const links: Route.LinksFunction = () => [
 
 export function Layout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="en">
+    <html lang="en" className="dark">
       <head>
         <meta charSet="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <title>TaskHub — Project Management Made Beautiful</title>
+        <title>TaskSphere — Project Management Made Beautiful</title>
         <meta
           name="description"
-          content="TaskHub is a modern project management platform for teams. Manage tasks, collaborate seamlessly, and track progress with beautiful analytics."
+          content="TaskSphere is a modern project management platform for teams. Manage tasks, collaborate seamlessly, and track progress with beautiful analytics."
         />
         <meta name="theme-color" content="#4f46e5" />
         <Meta />

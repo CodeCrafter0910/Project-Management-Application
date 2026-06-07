@@ -66,8 +66,14 @@ const SignIn = () => {
         </div>
 
         <div className="relative z-10 max-w-md text-center space-y-8">
-          <div className="w-20 h-20 rounded-2xl bg-gradient-primary flex items-center justify-center mx-auto shadow-2xl shadow-indigo-500/30">
-            <Zap className="w-10 h-10 text-white" />
+          <div className="relative flex items-center justify-center mx-auto">
+            <img
+              src="/logo.png"
+              alt="TaskSphere"
+              className="h-16 w-auto object-contain mix-blend-screen relative z-10"
+            />
+            {/* Ambient glow behind the logo */}
+            <div className="absolute -inset-6 bg-gradient-to-r from-indigo-500/20 via-violet-500/20 to-cyan-500/20 rounded-full blur-2xl animate-pulse-glow" />
           </div>
 
           <div>
@@ -109,10 +115,11 @@ const SignIn = () => {
         <div className="w-full max-w-md animate-fade-in-up">
           {/* Mobile logo */}
           <div className="lg:hidden flex items-center justify-center mb-8">
-            <div className="w-12 h-12 rounded-xl bg-gradient-primary flex items-center justify-center shadow-lg shadow-indigo-500/25">
-              <Zap className="w-6 h-6 text-white" />
-            </div>
-            <span className="ml-3 text-xl font-bold text-white">TaskSphere</span>
+            <img
+              src="/logo.png"
+              alt="TaskSphere"
+              className="h-10 w-auto object-contain mix-blend-screen"
+            />
           </div>
 
           <Card className="glass-dark border-white/10 shadow-2xl">

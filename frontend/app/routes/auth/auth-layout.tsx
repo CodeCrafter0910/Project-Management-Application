@@ -9,20 +9,20 @@ const AuthLayout = () => {
   if (isLoading) {
     return (
       <div className="min-h-screen bg-gradient-auth flex items-center justify-center">
-        <div className="flex flex-col items-center gap-5 animate-fade-in-up">
-          <div className="relative">
-            <div className="w-16 h-16 rounded-2xl bg-gradient-primary flex items-center justify-center shadow-2xl shadow-indigo-500/40">
-              <Zap className="w-8 h-8 text-white" />
-            </div>
-            <div className="absolute inset-0 w-16 h-16 rounded-2xl bg-gradient-primary opacity-30 animate-ping" />
+        <div className="flex flex-col items-center gap-6 animate-fade-in-up">
+          <div className="relative flex items-center justify-center">
+            <img
+              src="/logo.png"
+              alt="TaskSphere"
+              className="h-12 w-auto object-contain mix-blend-screen relative z-10"
+            />
+            {/* Ambient glow behind the logo */}
+            <div className="absolute -inset-4 bg-gradient-to-r from-indigo-500/20 via-violet-500/20 to-cyan-500/20 rounded-full blur-xl animate-pulse-glow" />
           </div>
-          <div className="flex flex-col items-center gap-2">
-            <span className="text-white font-bold text-xl tracking-tight">TaskSphere</span>
-            <div className="flex gap-1.5 mt-1">
-              <div className="w-1.5 h-1.5 rounded-full bg-indigo-400 animate-bounce" style={{ animationDelay: "0ms" }} />
-              <div className="w-1.5 h-1.5 rounded-full bg-violet-400 animate-bounce" style={{ animationDelay: "150ms" }} />
-              <div className="w-1.5 h-1.5 rounded-full bg-cyan-400 animate-bounce" style={{ animationDelay: "300ms" }} />
-            </div>
+          <div className="flex gap-1.5 mt-1">
+            <div className="w-1.5 h-1.5 rounded-full bg-indigo-400 animate-bounce" style={{ animationDelay: "0ms" }} />
+            <div className="w-1.5 h-1.5 rounded-full bg-violet-400 animate-bounce" style={{ animationDelay: "150ms" }} />
+            <div className="w-1.5 h-1.5 rounded-full bg-cyan-400 animate-bounce" style={{ animationDelay: "300ms" }} />
           </div>
         </div>
       </div>

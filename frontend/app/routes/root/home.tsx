@@ -35,11 +35,12 @@ const Homepage = () => {
 
       {/* Navigation */}
       <nav className="relative z-10 flex items-center justify-between px-6 sm:px-12 lg:px-20 py-5">
-        <Link to="/" className="flex items-center gap-3">
-          <div className="w-10 h-10 rounded-xl bg-gradient-primary flex items-center justify-center shadow-lg shadow-indigo-500/25">
-            <Zap className="w-5 h-5 text-white" />
-          </div>
-          <span className="text-xl font-bold tracking-tight">TaskSphere</span>
+        <Link to="/" className="flex items-center">
+          <img
+            src="/logo.png"
+            alt="TaskSphere"
+            className="h-8 sm:h-10 w-auto object-contain mix-blend-screen"
+          />
         </Link>
         <div className="flex items-center gap-3">
           <Link to="/sign-in">
@@ -274,11 +275,12 @@ const Homepage = () => {
       {/* Footer */}
       <footer className="relative z-10 border-t border-white/5 px-6 sm:px-12 py-8">
         <div className="max-w-6xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-4">
-          <div className="flex items-center gap-2">
-            <div className="w-8 h-8 rounded-lg bg-gradient-primary flex items-center justify-center">
-              <Zap className="w-4 h-4 text-white" />
-            </div>
-            <span className="font-semibold">TaskSphere</span>
+          <div className="flex items-center">
+            <img
+              src="/logo.png"
+              alt="TaskSphere"
+              className="h-6 sm:h-7 w-auto object-contain mix-blend-screen"
+            />
           </div>
           <p className="text-sm text-white/30">
             © {new Date().getFullYear()} TaskSphere. Built for productive teams.

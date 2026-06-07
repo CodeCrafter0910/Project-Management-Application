@@ -71,20 +71,19 @@ export const SidebarComponent = ({
 
       <div className="flex h-14 items-center border-b border-border/50 px-4 mb-2">
         <Link to="/dashboard" className="flex items-center">
-          {!isCollapsed && (
-            <div className="flex items-center gap-2.5">
-              <div className="w-8 h-8 rounded-lg bg-gradient-primary flex items-center justify-center shadow-md shadow-indigo-500/15">
-                <Zap className="w-4 h-4 text-white" />
-              </div>
-              <span className="font-bold text-lg hidden md:block tracking-tight">
-                TaskSphere
-              </span>
-            </div>
-          )}
-
-          {isCollapsed && (
-            <div className="w-8 h-8 rounded-lg bg-gradient-primary flex items-center justify-center shadow-md shadow-indigo-500/15">
-              <Zap className="w-4 h-4 text-white" />
+          {!isCollapsed ? (
+            <img
+              src="/logo.png"
+              alt="TaskSphere"
+              className="h-8 w-auto object-contain mix-blend-screen"
+            />
+          ) : (
+            <div className="w-8 h-8 rounded-lg overflow-hidden flex items-center justify-start">
+              <img
+                src="/logo.png"
+                alt="TaskSphere"
+                className="h-8 max-w-none object-left object-cover mix-blend-screen"
+              />
             </div>
           )}
         </Link>

@@ -59,81 +59,89 @@ const Homepage = () => {
       </nav>
 
       {/* Hero Section */}
-      <section className="relative z-10 max-w-6xl mx-auto px-6 sm:px-12 pt-10 sm:pt-14 pb-10 text-center">
-        <div className="animate-fade-in-up">
-          <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full glass text-sm text-white/80 mb-4">
-            <span className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse" />
-            Now available for teams of all sizes
+      <section className="relative z-10 max-w-7xl mx-auto px-6 sm:px-12 lg:px-20 pt-10 sm:pt-16 pb-8">
+        <div className="grid lg:grid-cols-2 gap-10 lg:gap-16 items-center">
+          
+          {/* Left — Text Content */}
+          <div className="animate-fade-in-up text-center lg:text-left">
+            <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full glass text-sm text-white/80 mb-5">
+              <span className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse" />
+              Now available for teams of all sizes
+            </div>
+
+            <h1 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold leading-tight tracking-tight mb-4">
+              Manage Projects
+              <br />
+              <span className="bg-gradient-to-r from-indigo-400 via-violet-400 to-cyan-400 bg-clip-text text-transparent">
+                Like Never Before
+              </span>
+            </h1>
+
+            <p className="text-base sm:text-lg text-white/60 max-w-lg mx-auto lg:mx-0 mb-7 leading-relaxed">
+              TaskSphere brings your team together with powerful task management,
+              real-time collaboration, and beautiful analytics — all in one
+              seamless platform.
+            </p>
+
+            <div className="flex flex-col sm:flex-row items-center lg:items-start justify-center lg:justify-start gap-3">
+              <Link to="/sign-up">
+                <Button
+                  size="lg"
+                  className="bg-gradient-primary text-white font-semibold px-6 py-4 text-base rounded-xl shadow-xl shadow-indigo-500/30 hover:shadow-2xl hover:shadow-indigo-500/40 transition-all duration-500 hover:scale-105 group"
+                >
+                  Start Free Today
+                  <ArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" />
+                </Button>
+              </Link>
+              <Link to="/sign-in">
+                <Button
+                  variant="outline"
+                  size="lg"
+                  className="border-white/20 text-white hover:bg-white/10 px-6 py-4 text-base rounded-xl transition-all duration-300"
+                >
+                  Sign In to Dashboard
+                </Button>
+              </Link>
+            </div>
           </div>
 
-          <h1 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold leading-tight tracking-tight mb-4">
-            Manage Projects
-            <br />
-            <span className="bg-gradient-to-r from-indigo-400 via-violet-400 to-cyan-400 bg-clip-text text-transparent">
-              Like Never Before
-            </span>
-          </h1>
-
-          <p className="text-base sm:text-lg text-white/60 max-w-2xl mx-auto mb-6 leading-relaxed">
-            TaskSphere brings your team together with powerful task management,
-            real-time collaboration, and beautiful analytics — all in one
-            seamless platform.
-          </p>
-
-          <div className="flex flex-col sm:flex-row items-center justify-center gap-3">
-            <Link to="/sign-up">
-              <Button
-                size="lg"
-                className="bg-gradient-primary text-white font-semibold px-6 py-4 text-base rounded-xl shadow-xl shadow-indigo-500/30 hover:shadow-2xl hover:shadow-indigo-500/40 transition-all duration-500 hover:scale-105 group"
-              >
-                Start Free Today
-                <ArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" />
-              </Button>
-            </Link>
-            <Link to="/sign-in">
-              <Button
-                variant="outline"
-                size="lg"
-                className="border-white/20 text-white hover:bg-white/10 px-6 py-4 text-base rounded-xl transition-all duration-300"
-              >
-                Sign In to Dashboard
-              </Button>
-            </Link>
-          </div>
-        </div>
-
-        {/* Hero Image Showcase */}
-        <div className="mt-8 sm:mt-10 animate-fade-in-up animation-delay-200">
-          <div className="hero-image-wrapper relative max-w-2xl mx-auto">
-            {/* Ambient glow behind the image */}
-            <div className="absolute -inset-3 sm:-inset-4 bg-gradient-to-r from-indigo-500/20 via-violet-500/20 to-cyan-500/20 rounded-2xl blur-xl animate-pulse-glow pointer-events-none" />
-            
-            {/* Glassmorphism frame */}
-            <div className="relative glass hero-image-frame rounded-2xl sm:rounded-3xl p-1.5 sm:p-2 overflow-hidden">
-              {/* Shimmer overlay on the border */}
-              <div className="absolute inset-0 rounded-2xl sm:rounded-3xl overflow-hidden pointer-events-none">
-                <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/10 to-transparent animate-shimmer" />
-              </div>
+          {/* Right — Tilted Hanging Frame Image */}
+          <div className="animate-fade-in-up animation-delay-200 flex justify-center lg:justify-end">
+            <div className="hero-hanging-frame relative">
+              {/* Ambient glow */}
+              <div className="absolute -inset-4 bg-gradient-to-br from-indigo-500/25 via-violet-500/15 to-cyan-500/25 rounded-2xl blur-xl animate-pulse-glow pointer-events-none" />
               
-              <img
-                src="/tasksphere-hero.png"
-                alt="TaskSphere — Project Management System"
-                className="relative w-full h-auto rounded-xl sm:rounded-2xl shadow-2xl shadow-indigo-500/10 object-cover"
-                loading="eager"
-              />
+              {/* The frame */}
+              <div className="relative hero-image-frame rounded-2xl p-1.5 overflow-hidden">
+                {/* Shimmer sweep */}
+                <div className="absolute inset-0 rounded-2xl overflow-hidden pointer-events-none">
+                  <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/10 to-transparent animate-shimmer" />
+                </div>
+                
+                <img
+                  src="/tasksphere-hero.png"
+                  alt="TaskSphere — Project Management System"
+                  className="relative w-full h-auto rounded-xl shadow-2xl shadow-indigo-500/15 object-cover"
+                  loading="eager"
+                />
+              </div>
+
+              {/* Decorative wire / pin effect */}
+              <div className="absolute -top-3 left-1/2 -translate-x-1/2 w-6 h-6 rounded-full bg-gradient-to-br from-white/20 to-white/5 border border-white/15 backdrop-blur-sm shadow-lg shadow-black/20 z-10" />
+              <div className="absolute -top-8 left-1/2 -translate-x-1/2 w-px h-6 bg-gradient-to-b from-white/30 to-transparent" />
             </div>
           </div>
         </div>
 
         {/* Floating stats */}
-        <div className="mt-10 grid grid-cols-2 sm:grid-cols-4 gap-3 max-w-3xl mx-auto animate-fade-in-up animation-delay-400">
+        <div className="mt-12 grid grid-cols-2 sm:grid-cols-4 gap-3 max-w-4xl mx-auto animate-fade-in-up animation-delay-400">
           {[
             { value: "10K+", label: "Tasks Managed" },
             { value: "500+", label: "Active Teams" },
             { value: "99.9%", label: "Uptime" },
             { value: "4.9★", label: "User Rating" },
           ].map((stat) => (
-            <div key={stat.label} className="glass rounded-xl p-4 hover-lift cursor-default">
+            <div key={stat.label} className="glass rounded-xl p-4 hover-lift cursor-default text-center">
               <div className="text-2xl font-bold text-white">{stat.value}</div>
               <div className="text-sm text-white/50">{stat.label}</div>
             </div>

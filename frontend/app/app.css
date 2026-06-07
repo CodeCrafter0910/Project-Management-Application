@@ -289,15 +289,25 @@ body {
 
 /* ── Hero Hanging Frame ───────────────────────────────── */
 
+@keyframes pendulum {
+  0%, 100% {
+    transform: rotate(-3.5deg);
+  }
+  50% {
+    transform: rotate(3.5deg);
+  }
+}
+
 .hero-hanging-frame {
   max-width: 380px;
   perspective: 800px;
-  transform: rotate(3deg);
+  transform-origin: 50% -32px;
+  animation: pendulum 5s ease-in-out infinite;
   transition: transform 0.6s cubic-bezier(0.23, 1, 0.32, 1);
-  animation: float-slow 8s ease-in-out infinite;
 }
 
 .hero-hanging-frame:hover {
+  animation: none;
   transform: rotate(0deg) scale(1.03);
 }
 
@@ -330,6 +340,7 @@ body {
 @media (max-width: 1023px) {
   .hero-hanging-frame {
     max-width: 320px;
-    transform: rotate(2deg);
+    transform-origin: 50% -24px;
+    animation: pendulum 6s ease-in-out infinite;
   }
 }

@@ -59,14 +59,14 @@ const Homepage = () => {
       </nav>
 
       {/* Hero Section */}
-      <section className="relative z-10 max-w-6xl mx-auto px-6 sm:px-12 pt-20 sm:pt-28 pb-20 text-center">
+      <section className="relative z-10 max-w-6xl mx-auto px-6 sm:px-12 pt-10 sm:pt-14 pb-10 text-center">
         <div className="animate-fade-in-up">
-          <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full glass text-sm text-white/80 mb-8">
+          <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full glass text-sm text-white/80 mb-4">
             <span className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse" />
             Now available for teams of all sizes
           </div>
 
-          <h1 className="text-4xl sm:text-5xl lg:text-7xl font-extrabold leading-tight tracking-tight mb-6">
+          <h1 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold leading-tight tracking-tight mb-4">
             Manage Projects
             <br />
             <span className="bg-gradient-to-r from-indigo-400 via-violet-400 to-cyan-400 bg-clip-text text-transparent">
@@ -74,17 +74,17 @@ const Homepage = () => {
             </span>
           </h1>
 
-          <p className="text-lg sm:text-xl text-white/60 max-w-2xl mx-auto mb-10 leading-relaxed">
+          <p className="text-base sm:text-lg text-white/60 max-w-2xl mx-auto mb-6 leading-relaxed">
             TaskSphere brings your team together with powerful task management,
             real-time collaboration, and beautiful analytics — all in one
             seamless platform.
           </p>
 
-          <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
+          <div className="flex flex-col sm:flex-row items-center justify-center gap-3">
             <Link to="/sign-up">
               <Button
                 size="lg"
-                className="bg-gradient-primary text-white font-semibold px-8 py-6 text-lg rounded-xl shadow-xl shadow-indigo-500/30 hover:shadow-2xl hover:shadow-indigo-500/40 transition-all duration-500 hover:scale-105 group"
+                className="bg-gradient-primary text-white font-semibold px-6 py-4 text-base rounded-xl shadow-xl shadow-indigo-500/30 hover:shadow-2xl hover:shadow-indigo-500/40 transition-all duration-500 hover:scale-105 group"
               >
                 Start Free Today
                 <ArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" />
@@ -94,7 +94,7 @@ const Homepage = () => {
               <Button
                 variant="outline"
                 size="lg"
-                className="border-white/20 text-white hover:bg-white/10 px-8 py-6 text-lg rounded-xl transition-all duration-300"
+                className="border-white/20 text-white hover:bg-white/10 px-6 py-4 text-base rounded-xl transition-all duration-300"
               >
                 Sign In to Dashboard
               </Button>
@@ -103,10 +103,10 @@ const Homepage = () => {
         </div>
 
         {/* Hero Image Showcase */}
-        <div className="mt-16 sm:mt-20 animate-fade-in-up animation-delay-200">
-          <div className="hero-image-wrapper relative max-w-4xl mx-auto">
+        <div className="mt-8 sm:mt-10 animate-fade-in-up animation-delay-200">
+          <div className="hero-image-wrapper relative max-w-2xl mx-auto">
             {/* Ambient glow behind the image */}
-            <div className="absolute -inset-4 sm:-inset-6 bg-gradient-to-r from-indigo-500/20 via-violet-500/20 to-cyan-500/20 rounded-3xl blur-2xl animate-pulse-glow pointer-events-none" />
+            <div className="absolute -inset-3 sm:-inset-4 bg-gradient-to-r from-indigo-500/20 via-violet-500/20 to-cyan-500/20 rounded-2xl blur-xl animate-pulse-glow pointer-events-none" />
             
             {/* Glassmorphism frame */}
             <div className="relative glass hero-image-frame rounded-2xl sm:rounded-3xl p-1.5 sm:p-2 overflow-hidden">
@@ -126,7 +126,7 @@ const Homepage = () => {
         </div>
 
         {/* Floating stats */}
-        <div className="mt-20 grid grid-cols-2 sm:grid-cols-4 gap-4 max-w-3xl mx-auto animate-fade-in-up animation-delay-400">
+        <div className="mt-10 grid grid-cols-2 sm:grid-cols-4 gap-3 max-w-3xl mx-auto animate-fade-in-up animation-delay-400">
           {[
             { value: "10K+", label: "Tasks Managed" },
             { value: "500+", label: "Active Teams" },

@@ -73,10 +73,10 @@ const SignUp = () => {
 
         <div className="relative z-10 max-w-md text-center space-y-8">
           <div className="relative flex items-center justify-center mx-auto">
-            <img
+             <img
               src="/logo.png"
               alt="TaskSphere"
-              className="h-16 w-auto object-contain mix-blend-screen relative z-10"
+              className="h-28 w-auto object-contain mix-blend-screen relative z-10"
             />
             {/* Ambient glow behind the logo */}
             <div className="absolute -inset-6 bg-gradient-to-r from-indigo-500/20 via-violet-500/20 to-cyan-500/20 rounded-full blur-2xl animate-pulse-glow" />
@@ -116,7 +116,7 @@ const SignUp = () => {
             <img
               src="/logo.png"
               alt="TaskSphere"
-              className="h-10 w-auto object-contain mix-blend-screen"
+              className="h-20 w-auto object-contain mix-blend-screen"
             />
           </div>
 

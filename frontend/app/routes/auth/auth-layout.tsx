@@ -14,7 +14,7 @@ const AuthLayout = () => {
             <img
               src="/logo.png"
               alt="TaskSphere"
-              className="h-12 w-auto object-contain mix-blend-screen relative z-10"
+              className="h-24 w-auto object-contain mix-blend-screen relative z-10"
             />
             {/* Ambient glow behind the logo */}
             <div className="absolute -inset-4 bg-gradient-to-r from-indigo-500/20 via-violet-500/20 to-cyan-500/20 rounded-full blur-xl animate-pulse-glow" />

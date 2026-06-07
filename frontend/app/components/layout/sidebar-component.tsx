@@ -70,19 +70,19 @@ export const SidebarComponent = ({
       <div className="absolute top-0 left-0 right-0 h-[2px] bg-gradient-to-r from-indigo-500 via-violet-500 to-cyan-500" />
 
       <div className="flex h-14 items-center border-b border-border/50 px-4 mb-2">
-        <Link to="/dashboard" className="flex items-center">
+        <Link to="/dashboard" className="flex items-center -ml-3">
           {!isCollapsed ? (
             <img
               src="/logo.png"
               alt="TaskSphere"
-              className="h-8 w-auto object-contain mix-blend-screen"
+              className="h-16 w-auto object-contain mix-blend-screen"
             />
           ) : (
-            <div className="w-8 h-8 rounded-lg overflow-hidden flex items-center justify-start">
+            <div className="w-8 h-8 rounded-lg overflow-hidden flex items-center justify-start ml-2">
               <img
                 src="/logo.png"
                 alt="TaskSphere"
-                className="h-8 max-w-none object-left object-cover mix-blend-screen"
+                className="h-14 max-w-none -ml-0.5 object-left object-cover mix-blend-screen"
               />
             </div>
           )}

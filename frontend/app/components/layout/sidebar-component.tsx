@@ -70,10 +70,10 @@ export const SidebarComponent = ({
       {/* Subtle gradient accent at top */}
       <div className="absolute top-0 left-0 right-0 h-[2px] bg-gradient-to-r from-indigo-500 via-violet-500 to-cyan-500" />
 
-      <div className="flex h-14 items-center border-b border-border/50 px-4 mb-2">
+      <div className="flex h-16 items-center border-b border-border/50 px-4 mb-2">
         <Link to="/dashboard" className="flex items-center -ml-3">
           {!isCollapsed ? (
-            <Logo className="h-16 w-[200px]" />
+            <Logo className="h-12 w-[180px] translate-y-[2px]" />
           ) : (
             <Logo className="w-8 h-8 ml-2" />
           )}

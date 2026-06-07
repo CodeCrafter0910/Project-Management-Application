@@ -75,14 +75,14 @@ export const SidebarComponent = ({
             <img
               src="/logo.png"
               alt="TaskSphere"
-              className="h-16 w-auto object-contain mix-blend-screen"
+              className="h-16 w-auto object-contain logo-blend"
             />
           ) : (
             <div className="w-8 h-8 rounded-lg overflow-hidden flex items-center justify-start ml-2">
               <img
                 src="/logo.png"
                 alt="TaskSphere"
-                className="h-14 max-w-none -ml-0.5 object-left object-cover mix-blend-screen"
+                className="h-14 max-w-none -ml-0.5 object-left object-cover logo-blend"
               />
             </div>
           )}

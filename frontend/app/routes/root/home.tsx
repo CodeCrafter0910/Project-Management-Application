@@ -39,7 +39,7 @@ const Homepage = () => {
           <img
             src="/logo.png"
             alt="TaskSphere"
-            className="h-16 sm:h-20 w-auto object-contain mix-blend-screen"
+            className="h-16 sm:h-20 w-auto object-contain logo-blend"
           />
         </Link>
         <div className="flex items-center gap-3">
@@ -279,7 +279,7 @@ const Homepage = () => {
             <img
               src="/logo.png"
               alt="TaskSphere"
-              className="h-10 sm:h-12 w-auto object-contain mix-blend-screen"
+              className="h-10 sm:h-12 w-auto object-contain logo-blend"
             />
           </div>
           <p className="text-sm text-white/30">

@@ -278,12 +278,6 @@ body {
   background: linear-gradient(135deg, oklch(0.13 0.04 265) 0%, oklch(0.16 0.06 280) 40%, oklch(0.14 0.05 300) 100%);
 }
 
-/* Logo blend — removes the baked-in dark background */
-.logo-blend {
-  mix-blend-mode: lighten;
-  isolation: auto;
-}
-
 /* Hover lift effect */
 .hover-lift {
   transition: transform 0.3s ease, box-shadow 0.3s ease;

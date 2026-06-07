@@ -10,6 +10,7 @@ import {
   Shield,
   Clock,
 } from "lucide-react";
+import { Logo } from "@/components/logo";
 import type { Route } from "../../+types/root";
 
 export function meta({}: Route.MetaArgs) {
@@ -36,11 +37,7 @@ const Homepage = () => {
       {/* Navigation */}
       <nav className="relative z-10 flex items-center justify-between px-6 sm:px-12 lg:px-20 py-5">
         <Link to="/" className="flex items-center -ml-4">
-          <img
-            src="/logo.png"
-            alt="TaskSphere"
-            className="h-16 sm:h-20 w-auto object-contain logo-blend"
-          />
+          <Logo className="h-16 sm:h-20 w-[200px] sm:w-[250px]" bgColor="oklch(0.15 0.05 270)" />
         </Link>
         <div className="flex items-center gap-3">
           <Link to="/sign-in">
@@ -276,11 +273,7 @@ const Homepage = () => {
       <footer className="relative z-10 border-t border-white/5 px-6 sm:px-12 py-8">
         <div className="max-w-6xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-4">
           <div className="flex items-center -ml-3">
-            <img
-              src="/logo.png"
-              alt="TaskSphere"
-              className="h-10 sm:h-12 w-auto object-contain logo-blend"
-            />
+            <Logo className="h-10 sm:h-12 w-[130px] sm:w-[150px]" bgColor="oklch(0.15 0.05 270)" />
           </div>
           <p className="text-sm text-white/30">
             © {new Date().getFullYear()} TaskSphere. Built for productive teams.

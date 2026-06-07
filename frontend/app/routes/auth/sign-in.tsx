@@ -20,6 +20,7 @@ import { signInSchema } from "@/lib/schema";
 import { useAuth } from "@/provider/auth-context";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { Loader2, Mail, Lock, Zap, ArrowRight } from "lucide-react";
+import { Logo } from "@/components/logo";
 import { useForm } from "react-hook-form";
 import { Link, useNavigate } from "react-router";
 import { toast } from "sonner";
@@ -67,13 +68,9 @@ const SignIn = () => {
 
         <div className="relative z-10 max-w-md text-center space-y-8">
           <div className="relative flex items-center justify-center mx-auto">
-            <img
-              src="/logo.png"
-              alt="TaskSphere"
-              className="h-28 w-auto object-contain logo-blend relative z-10"
-            />
+            <Logo className="h-28 w-[350px] relative z-10" bgColor="oklch(0.14 0.05 280)" />
             {/* Ambient glow behind the logo */}
-            <div className="absolute -inset-6 bg-gradient-to-r from-indigo-500/20 via-violet-500/20 to-cyan-500/20 rounded-full blur-2xl animate-pulse-glow" />
+            <div className="absolute -inset-6 bg-gradient-to-r from-indigo-500/20 via-violet-500/20 to-cyan-500/20 rounded-full blur-2xl animate-pulse-glow -z-10" />
           </div>
 
           <div>
@@ -115,11 +112,7 @@ const SignIn = () => {
         <div className="w-full max-w-md animate-fade-in-up">
           {/* Mobile logo */}
           <div className="lg:hidden flex items-center justify-center mb-8">
-            <img
-              src="/logo.png"
-              alt="TaskSphere"
-              className="h-20 w-auto object-contain logo-blend"
-            />
+            <Logo className="h-20 w-[250px]" bgColor="oklch(0.14 0.05 280)" />
           </div>
 
           <Card className="glass-dark border-white/10 shadow-2xl">

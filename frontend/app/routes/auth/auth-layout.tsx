@@ -1,7 +1,7 @@
 import { useAuth } from "@/provider/auth-context";
+import { Logo } from "@/components/logo";
 import React from "react";
 import { Navigate, Outlet } from "react-router";
-import { Zap } from "lucide-react";
 
 const AuthLayout = () => {
   const { isAuthenticated, isLoading } = useAuth();
@@ -11,13 +11,9 @@ const AuthLayout = () => {
       <div className="min-h-screen bg-gradient-auth flex items-center justify-center">
         <div className="flex flex-col items-center gap-6 animate-fade-in-up">
           <div className="relative flex items-center justify-center">
-            <img
-              src="/logo.png"
-              alt="TaskSphere"
-              className="h-24 w-auto object-contain mix-blend-screen relative z-10"
-            />
+            <Logo className="h-24 w-[300px] relative z-10" bgColor="oklch(0.14 0.05 280)" />
             {/* Ambient glow behind the logo */}
-            <div className="absolute -inset-4 bg-gradient-to-r from-indigo-500/20 via-violet-500/20 to-cyan-500/20 rounded-full blur-xl animate-pulse-glow" />
+            <div className="absolute -inset-4 bg-gradient-to-r from-indigo-500/20 via-violet-500/20 to-cyan-500/20 rounded-full blur-xl animate-pulse-glow -z-10" />
           </div>
           <div className="flex gap-1.5 mt-1">
             <div className="w-1.5 h-1.5 rounded-full bg-indigo-400 animate-bounce" style={{ animationDelay: "0ms" }} />

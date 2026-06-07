@@ -1,4 +1,5 @@
 import { cn } from "@/lib/utils";
+import { Logo } from "../logo";
 import { useAuth } from "@/provider/auth-context";
 import type { Workspace } from "@/types";
 import {
@@ -72,19 +73,9 @@ export const SidebarComponent = ({
       <div className="flex h-14 items-center border-b border-border/50 px-4 mb-2">
         <Link to="/dashboard" className="flex items-center -ml-3">
           {!isCollapsed ? (
-            <img
-              src="/logo.png"
-              alt="TaskSphere"
-              className="h-16 w-auto object-contain logo-blend"
-            />
+            <Logo className="h-16 w-[200px]" />
           ) : (
-            <div className="w-8 h-8 rounded-lg overflow-hidden flex items-center justify-start ml-2">
-              <img
-                src="/logo.png"
-                alt="TaskSphere"
-                className="h-14 max-w-none -ml-0.5 object-left object-cover logo-blend"
-              />
-            </div>
+            <Logo className="w-8 h-8 ml-2" />
           )}
         </Link>
 

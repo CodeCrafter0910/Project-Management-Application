@@ -102,6 +102,29 @@ const Homepage = () => {
           </div>
         </div>
 
+        {/* Hero Image Showcase */}
+        <div className="mt-16 sm:mt-20 animate-fade-in-up animation-delay-200">
+          <div className="hero-image-wrapper relative max-w-4xl mx-auto">
+            {/* Ambient glow behind the image */}
+            <div className="absolute -inset-4 sm:-inset-6 bg-gradient-to-r from-indigo-500/20 via-violet-500/20 to-cyan-500/20 rounded-3xl blur-2xl animate-pulse-glow pointer-events-none" />
+            
+            {/* Glassmorphism frame */}
+            <div className="relative glass hero-image-frame rounded-2xl sm:rounded-3xl p-1.5 sm:p-2 overflow-hidden">
+              {/* Shimmer overlay on the border */}
+              <div className="absolute inset-0 rounded-2xl sm:rounded-3xl overflow-hidden pointer-events-none">
+                <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/10 to-transparent animate-shimmer" />
+              </div>
+              
+              <img
+                src="/tasksphere-hero.png"
+                alt="TaskSphere — Project Management System"
+                className="relative w-full h-auto rounded-xl sm:rounded-2xl shadow-2xl shadow-indigo-500/10 object-cover"
+                loading="eager"
+              />
+            </div>
+          </div>
+        </div>
+
         {/* Floating stats */}
         <div className="mt-20 grid grid-cols-2 sm:grid-cols-4 gap-4 max-w-3xl mx-auto animate-fade-in-up animation-delay-400">
           {[

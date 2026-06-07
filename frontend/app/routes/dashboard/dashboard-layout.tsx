@@ -7,7 +7,7 @@ import { useGetWorkspacesQuery } from "@/hooks/use-workspace";
 import { useAuth } from "@/provider/auth-context";
 import type { Workspace } from "@/types";
 import { useEffect, useState } from "react";
-import { Navigate, Outlet, useNavigate, useSearchParams } from "react-router";
+import { Navigate, Outlet, useLocation, useNavigate, useSearchParams } from "react-router";
 
 export const clientLoader = async () => {
   try {
@@ -26,6 +26,7 @@ const DashboardLayout = () => {
 
   const [searchParams] = useSearchParams();
   const navigate = useNavigate();
+  const location = useLocation();
 
   // Use React Query so workspaces are retried automatically after cold-start
   const { data: workspaces = [] } = useGetWorkspacesQuery() as {
@@ -39,16 +40,20 @@ const DashboardLayout = () => {
     const workspaceId = searchParams.get("workspaceId");
 
     if (!workspaceId) {
-      // No workspace in URL — navigate to the first one
-      const first = workspaces[0];
-      setCurrentWorkspace(first);
-      navigate(`/dashboard?workspaceId=${first._id}`, { replace: true });
-    } else if (!currentWorkspace) {
-      // workspaceId is in URL (e.g. after page refresh) — restore state
+      // Only auto-redirect to dashboard with the first workspace if we are currently on the dashboard path
+      if (location.pathname === "/dashboard") {
+        const first = workspaces[0];
+        setCurrentWorkspace(first);
+        navigate(`/dashboard?workspaceId=${first._id}`, { replace: true });
+      }
+    } else {
+      // Ensure currentWorkspace is synchronized with the workspaceId in the URL
       const found = workspaces.find((ws) => ws._id === workspaceId);
-      if (found) setCurrentWorkspace(found);
+      if (found && (!currentWorkspace || currentWorkspace._id !== workspaceId)) {
+        setCurrentWorkspace(found);
+      }
     }
-  }, [workspaces, searchParams]);
+  }, [workspaces, searchParams, location.pathname, currentWorkspace]);
 
   if (isLoading) {
     return (

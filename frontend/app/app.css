@@ -306,13 +306,8 @@ body {
   transition: transform 0.6s cubic-bezier(0.23, 1, 0.32, 1);
 }
 
-.hero-hanging-frame:hover {
-  animation: none;
-  transform: rotate(0deg) scale(1.03);
-}
-
 .hero-image-frame {
-  transition: box-shadow 0.5s ease;
+  transition: transform 0.5s ease, box-shadow 0.5s ease;
   border: 1px solid rgba(255, 255, 255, 0.15);
   background: linear-gradient(
     135deg,
@@ -323,6 +318,7 @@ body {
 }
 
 .hero-hanging-frame:hover .hero-image-frame {
+  transform: scale(1.03);
   box-shadow:
     0 25px 60px -15px rgba(99, 102, 241, 0.3),
     0 0 40px -10px rgba(139, 92, 246, 0.2);

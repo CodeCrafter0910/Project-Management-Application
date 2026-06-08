@@ -123,17 +123,15 @@ const Homepage = () => {
                   className="relative w-full h-auto rounded-xl shadow-2xl shadow-indigo-500/15 object-cover"
                   loading="eager"
                 />
-              </div>
 
-              {/* Floating notification chip — bottom-right, outside frame */}
-              <div className="absolute -bottom-5 -right-4 bg-black/30 backdrop-blur-xl rounded-lg px-3 py-2 shadow-lg border border-white/15 z-20">
-                <div className="flex gap-2 items-center">
-                  <div className="w-6 h-6 rounded-md bg-indigo-500/25 flex items-center justify-center text-indigo-300 shrink-0">
-                    <Bell className="w-3.5 h-3.5" />
+                {/* Notification strip — inside frame at bottom */}
+                <div className="absolute bottom-2.5 left-2.5 right-2.5 bg-black/40 backdrop-blur-lg rounded-lg px-3 py-2 border border-white/10 z-20">
+                  <div className="flex gap-2.5 items-center justify-center">
+                    <Bell className="w-3.5 h-3.5 notification-color-cycle shrink-0" />
+                    <p className="text-[11px] sm:text-xs font-semibold tracking-wide notification-color-cycle">
+                      🔔 All notifications will appear here
+                    </p>
                   </div>
-                  <p className="text-[11px] text-white/90 font-medium whitespace-nowrap">
-                    Notifications appear here
-                  </p>
                 </div>
               </div>
 

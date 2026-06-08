@@ -125,18 +125,15 @@ const Homepage = () => {
                 />
               </div>
 
-              {/* Floating notification card overlay */}
-              <div className="absolute bottom-4 left-4 bg-white/10 backdrop-blur-md rounded-xl p-3 shadow-xl border border-white/25 max-w-[220px] z-20">
-                <div className="flex gap-2.5 items-center">
-                  <div className="w-8 h-8 rounded-lg bg-indigo-500/30 flex items-center justify-center border border-indigo-400/30 text-white shrink-0">
-                    <Bell className="w-4 h-4 animate-pulse" />
+              {/* Floating notification chip — bottom-right, outside frame */}
+              <div className="absolute -bottom-5 -right-4 bg-black/30 backdrop-blur-xl rounded-lg px-3 py-2 shadow-lg border border-white/15 z-20">
+                <div className="flex gap-2 items-center">
+                  <div className="w-6 h-6 rounded-md bg-indigo-500/25 flex items-center justify-center text-indigo-300 shrink-0">
+                    <Bell className="w-3.5 h-3.5" />
                   </div>
-                  <div className="text-left">
-                    <h4 className="text-xs font-bold text-white leading-none">Notifications</h4>
-                    <p className="text-[11px] text-white mt-1 leading-normal font-medium">
-                      All notifications will appear here.
-                    </p>
-                  </div>
+                  <p className="text-[11px] text-white/90 font-medium whitespace-nowrap">
+                    Notifications appear here
+                  </p>
                 </div>
               </div>
 

@@ -126,15 +126,15 @@ const Homepage = () => {
               </div>
 
               {/* Floating notification card overlay */}
-              <div className="absolute -bottom-6 -left-6 md:-left-10 glass rounded-xl p-4 shadow-2xl border border-white/20 max-w-[260px] z-20 backdrop-blur-md">
-                <div className="flex gap-3 items-start">
-                  <div className="w-8 h-8 rounded-lg bg-indigo-500/20 flex items-center justify-center border border-indigo-500/30 text-indigo-400 shrink-0">
-                    <Bell className="w-4.5 h-4.5 animate-pulse" />
+              <div className="absolute bottom-4 left-4 bg-white/10 backdrop-blur-md rounded-xl p-3 shadow-xl border border-white/25 max-w-[220px] z-20">
+                <div className="flex gap-2.5 items-center">
+                  <div className="w-8 h-8 rounded-lg bg-indigo-500/30 flex items-center justify-center border border-indigo-400/30 text-white shrink-0">
+                    <Bell className="w-4 h-4 animate-pulse" />
                   </div>
                   <div className="text-left">
-                    <h4 className="text-xs font-semibold text-white mb-0.5">Notification Center</h4>
-                    <p className="text-[10px] text-white/70 leading-normal">
-                      All your workspace updates, project activity, and team mentions will be delivered here in real-time.
+                    <h4 className="text-xs font-bold text-white leading-none">Notifications</h4>
+                    <p className="text-[11px] text-white mt-1 leading-normal font-medium">
+                      All notifications will appear here.
                     </p>
                   </div>
                 </div>

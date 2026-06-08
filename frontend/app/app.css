@@ -341,31 +341,44 @@ body {
   }
 }
 
-/* ── Notification Color Cycle ──────────────────────── */
+/* ── Notification Marquee + Color Cycle ────────────── */
+
+@keyframes marquee-scroll {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
 
 @keyframes color-cycle {
   0%, 100% {
     color: #818cf8; /* indigo-400 */
-    text-shadow: 0 0 8px rgba(129, 140, 248, 0.4);
+    text-shadow: 0 0 10px rgba(129, 140, 248, 0.5);
   }
   20% {
     color: #22d3ee; /* cyan-400 */
-    text-shadow: 0 0 8px rgba(34, 211, 238, 0.4);
+    text-shadow: 0 0 10px rgba(34, 211, 238, 0.5);
   }
   40% {
     color: #34d399; /* emerald-400 */
-    text-shadow: 0 0 8px rgba(52, 211, 153, 0.4);
+    text-shadow: 0 0 10px rgba(52, 211, 153, 0.5);
   }
   60% {
     color: #c084fc; /* violet-400 */
-    text-shadow: 0 0 8px rgba(192, 132, 252, 0.4);
+    text-shadow: 0 0 10px rgba(192, 132, 252, 0.5);
   }
   80% {
     color: #fbbf24; /* amber-400 */
-    text-shadow: 0 0 8px rgba(251, 191, 36, 0.4);
+    text-shadow: 0 0 10px rgba(251, 191, 36, 0.5);
   }
 }
 
-.notification-color-cycle {
+.notification-marquee {
+  animation: marquee-scroll 14s linear infinite;
+}
+
+.notification-marquee-text {
   animation: color-cycle 6s ease-in-out infinite;
 }
